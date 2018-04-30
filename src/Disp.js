@@ -840,6 +840,13 @@ CM.Disp.CheckSeasonPopup = function() {
 	}
 }
 
+CM.Disp.CheckGardenTick = function() {
+	if (Game.Objects['Farm'].minigameLoaded && CM.Disp.lastGardenNextStep != Game.Objects['Farm'].minigame.nextStep) {
+		CM.Disp.lastGardenNextStep = Game.Objects['Farm'].minigame.nextStep;
+			CM.Disp.PlaySound(CM.Config.SeaSoundURL);
+	}
+}
+
 CM.Disp.UpdateTitle = function() {
 	if (Game.OnAscend || CM.Config.Title == 0) {
 		document.title = CM.Cache.Title;
@@ -1943,6 +1950,7 @@ CM.Disp.colors = [CM.Disp.colorBlue, CM.Disp.colorGreen, CM.Disp.colorYellow, CM
 CM.Disp.buffColors = {'Frenzy': CM.Disp.colorYellow, 'Dragon Harvest': CM.Disp.colorBrown, 'Elder frenzy': CM.Disp.colorGreen, 'Clot': CM.Disp.colorRed, 'Click frenzy': CM.Disp.colorBlue, 'Dragonflight': CM.Disp.colorPink};
 CM.Disp.lastGoldenCookieState = 0;
 CM.Disp.lastSeasonPopupState = 0;
+CM.Disp.lastGardenNextStep = 0;
 CM.Disp.goldenShimmer;
 CM.Disp.seasonPopShimmer;
 CM.Disp.lastAscendState = -1;
