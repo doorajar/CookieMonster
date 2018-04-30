@@ -187,6 +187,9 @@ CM.Loop = function() {
 
 	// Check Season Popup
 	CM.Disp.CheckSeasonPopup();
+	
+	// Check Garden Tick
+	CM.Disp.CheckGardenTick();
 
 	// Update Average CPS (might need to move)
 	CM.Cache.UpdateAvgCPS()
